@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      h1= title
+      a(href="/update-cobj") Add to this table
+      br
+      br
+
+      if characters.length
+        table(border="1" cellpadding="8" cellspacing="0")
+          thead
+            tr
+              th First Name
+              th Last Name
+              th Alias
+          tbody
+            each character in characters
+              tr
+                td= character.properties.first_name || '—'
+                td= character.properties.last_name || '—'
+                td= character.properties.alias || '—'
+      else
+        p No characters found.

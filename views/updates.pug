@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .form-wrapper
+      h2= title
+
+      form(method="POST" action="/update-cobj")
+        label(for="first_name") First Name
+        input(type="text" name="first_name" required)
+
+        label(for="last_name") Last Name
+        input(type="text" name="last_name" required)
+
+        label(for="alias") Alias
+        input(type="text" name="alias" required)
+
+        input(type="submit" value="Submit")
+
+      br
+      a(href="/") Return to the homepage
